@@ -1,8 +1,7 @@
 # DodgeOrDestroy, 몰려오는 적을 피하거나 파괴하는 2D 슈팅 미니게임
+<img width="820" height="800" alt="Image" src="https://github.com/user-attachments/assets/07ecb0ac-aceb-4b6f-8424-220dccf3925f" />
 
-<img width="620" height=420" alt="Image" src="https://github.com/user-attachments/assets/07ecb0ac-aceb-4b6f-8424-220dccf3925f" />
-
-> Unity Input System과 Rigidbody2D 기반 이동, 적 스폰 및 다양한 이동 패턴을 활용해 만든 2D 슈팅 미니 게임입니다.
+> 적의 다양한 이동 패턴을 구현하는 과제 사항에 맞게 만든 2D 형태의 비행 슈팅 미니 게임입니다.
 
 ## 프로젝트 개요
 
