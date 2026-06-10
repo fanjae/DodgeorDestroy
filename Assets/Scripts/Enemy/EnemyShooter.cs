@@ -19,6 +19,8 @@ public class EnemyShooter : MonoBehaviour
     }
     private void Fire()
     {
-        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        EnemyBullet bullet = Managers.Pool.GetPool(bulletPrefab);
+        bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = Quaternion.identity;
     }
 }

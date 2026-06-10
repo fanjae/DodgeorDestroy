@@ -25,11 +25,11 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    private void Start()
+    private void OnEnable() // 풀에서 다시 꺼낼때마다 초기화되도록 변경
     {
         currentHealth = maxHealth;
         startX = transform.position.x;
+        lifeTimer = 0f;
 
         if (hpUI != null)
         {
@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
         // 화면 아래로 간 적 제거
         if (transform.position.y < destoryY)
         {
-            Destroy(gameObject);
+            Managers.Pool.ReturnPool(this);
         }
     }
 
@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         scoreManager.AddScore(1);
-        Destroy(gameObject);
+        Managers.Pool.ReturnPool(this);
     }
 
     public void SetPattern(PatternType pattern)
@@ -136,6 +136,7 @@ public class Enemy : MonoBehaviour
         if (collision.TryGetComponent<Bullet>(out Bullet bullet))
         {
             TakeDamage(bullet.Damage);
+            Managers.Pool.ReturnPool(bullet);
         }
     }
 }

@@ -5,7 +5,7 @@ public class PlayerShooter : MonoBehaviour
     [Header("발사 위치")]
     [SerializeField] private Transform firePoint;
     [Header("총알 프리팹")]
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Bullet bulletPrefab;
 
     [SerializeField] private float fireDelay = 0.2f;
     private float fireTimer = 0.0f;
@@ -30,6 +30,8 @@ public class PlayerShooter : MonoBehaviour
         }
         fireTimer = 0.0f;
 
-        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Bullet bullet = Managers.Pool.GetPool(bulletPrefab.GetComponent<Bullet>());
+        bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = Quaternion.identity;
     }
 }
