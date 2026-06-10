@@ -2236,6 +2236,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2114427621}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2076225730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076225731}
+  - component: {fileID: 2076225732}
+  m_Layer: 0
+  m_Name: PoolPreloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2076225731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076225730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.69574, y: -1.07233, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076225732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076225730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91334591bbf72b49b3cb09f5febedfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolPreLoader
+  bulletPrefab: {fileID: 3273065675729301500, guid: cd9c2b6d583692d488a0e33d38babb07, type: 3}
+  enemyBulletPrefab: {fileID: 5883439498966356091, guid: e2086e41a30d5d14da56fc8bf40a745f, type: 3}
+  enemyPrefab: {fileID: 796960426398206231, guid: 0878042b13343d846ba74ed9d517e1bd, type: 3}
+  bulletCount: 30
+  enemyBulletCount: 30
+  enemyCount: 10
 --- !u!1 &2114427617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
   firePoint: {fileID: 2010348018}
-  bulletPrefab: {fileID: 3527519522460797003, guid: cd9c2b6d583692d488a0e33d38babb07, type: 3}
+  bulletPrefab: {fileID: 3273065675729301500, guid: cd9c2b6d583692d488a0e33d38babb07, type: 3}
   fireDelay: 0.2
 --- !u!114 &2114427624
 MonoBehaviour:
@@ -2490,3 +2540,4 @@ SceneRoots:
   - {fileID: 992425620}
   - {fileID: 124540056}
   - {fileID: 293266971}
+  - {fileID: 2076225731}

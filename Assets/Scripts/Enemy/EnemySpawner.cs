@@ -53,7 +53,10 @@ public class EnemySpawner : MonoBehaviour
 
         Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
-        Enemy enemy = Instantiate(enemyprefab, spawnPosition, Quaternion.identity);
+        Enemy enemy = Managers.Pool.GetPool(enemyprefab);
+        enemy.transform.position = spawnPosition;
+        enemy.transform.rotation = Quaternion.identity;
+
         enemy.SetPattern(selectedPattern);
         enemy.SetScoreManager(scoreManager);
     }
